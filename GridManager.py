@@ -20,17 +20,31 @@ class GridManager():
                 #print(f'sum_area: {sum_area}')
                 #print("\n")
 
-                if self.grid[col,row] == Mushroom:
-                    if sum_area == 5 or sum_area == 7:
-                        new_grid[col,row] = Grass
-                    elif (sum_area > 3 or sum_area < 2) and sum_area <= 10:
+
+
+                #Makes space ships easily
+                #if self.grid[col,row] == Mushroom:
+                #    if sum_area == 5 or sum_area == 7:
+                #        new_grid[col,row] = Grass
+                #    elif (sum_area > 3 or sum_area < 2) and sum_area <= 10:
+                #        new_grid[col,row] = Dead
+                #elif self.grid[col,row] == Dead:
+                #    if sum_area == 3 or sum_area >= 10:
+                #        new_grid[col,row] = Mushroom
+                #elif self.grid[col,row] == Grass:
+                #    if sum_area == 7:
+                #        new_grid[col,row] = Mushroom
+
+                if self.grid[col,row] == Dead:
+                    if sum_area == 3 or sum_area == 10:
+                        new_grid[col,row] = Mushroom
+
+                elif self.grid[col,row] == Mushroom:
+                    if (sum_area > 3 and sum_area < 7) or sum_area <= 1:
                         new_grid[col,row] = Dead
-                elif self.grid[col,row] == Dead:
-                    if sum_area == 3 or sum_area >= 10:
-                        new_grid[col,row] = Mushroom
+
                 elif self.grid[col,row] == Grass:
-                    if sum_area == 7:
-                        new_grid[col,row] = Mushroom
+                    pass
                     
         
         self.grid[:] = new_grid[:]

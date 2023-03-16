@@ -4,6 +4,7 @@ from ScreenManager import ScreenManager
 import numpy as np
 import Variables as Vars
 import pygame
+from Life import Dead, Mushroom, Grass
 
 pygame.init()
 
@@ -33,13 +34,13 @@ def display_grid():
 def handle_mouse_event():
     pos = pygame.mouse.get_pos()
 
-    i = pos[0] // Vars.CELL_SIZE[0]
-    j = pos[1] // Vars.CELL_SIZE[1]
+    col = pos[0] // Vars.CELL_SIZE[0]
+    row = pos[1] // Vars.CELL_SIZE[1]
 
-    if grid_manager.grid[i,j] == 0:
-        grid_manager.grid[i,j] = 1
+    if grid_manager.grid[col,row] == 0:
+        grid_manager.grid[col,row] = 1
     else:
-        grid_manager.grid[i,j] = 0
+        grid_manager.grid[col,row] = 0
 
     display_grid()
 
@@ -47,6 +48,9 @@ if __name__ == "__main__":
     clock = pygame.time.Clock()
     simulating = False
     display_grid()
+
+    
+    print(Dead)
 
     while True:
         for event in pygame.event.get():
