@@ -11,14 +11,14 @@ class ScreenManager():
     def draw_grid(self, grid):
         self.screen.fill(DEAD)
 
-        for i in range(GRID_SIZE[0]):
-            for j in range(GRID_SIZE[1]):
-                rect = pygame.Rect(i * CELL_SIZE[0], j * CELL_SIZE[1], CELL_SIZE[0], CELL_SIZE[1])
-                if grid[i,j] == 0:
+        for col in range(GRID_SIZE[0]):
+            for row in range(GRID_SIZE[1]):
+                rect = pygame.Rect(col * CELL_SIZE[0], row * CELL_SIZE[1], CELL_SIZE[0], CELL_SIZE[1])
+                if grid[col,row] == 0:
                     pygame.draw.rect(self.screen, DEAD, rect)
-                elif grid[i,j] == 1:
+                elif grid[col,row] == 1:
                     pygame.draw.rect(self.screen, MUSHROOM, rect)
-                elif grid[i,j] == 2:
+                elif grid[col,row] == 2:
                     pygame.draw.rect(self.screen, GRASS, rect)
 
 

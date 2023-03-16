@@ -65,6 +65,11 @@ if __name__ == "__main__":
                 elif event.key == pygame.K_c:
                     grid_manager.reset_grid()
                     display_grid()
+                elif event.key == pygame.K_e:
+                    if not simulating:
+                        print(grid_manager.grid)
+                        grid_manager.default_step()
+                        display_grid()
 
         if simulating:
             if COUNTER == COUNTER_LIMIT:
