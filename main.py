@@ -21,7 +21,7 @@ COUNTER_LIMIT = 20
 #grid_manager.grid[::2] = 1
 #grid_manager.grid[1:4,1:4] = 1
 
-print(grid_manager.grid)
+#print(grid_manager.grid)
 
 
 
@@ -67,7 +67,7 @@ if __name__ == "__main__":
                     display_grid()
                 elif event.key == pygame.K_e:
                     if not simulating:
-                        print(grid_manager.grid)
+                        #print(grid_manager.grid)
                         grid_manager.default_step()
                         display_grid()
 
