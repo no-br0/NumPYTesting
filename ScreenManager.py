@@ -22,5 +22,4 @@ class ScreenManager():
                     pygame.draw.rect(self.screen, GRASS, rect)
 
 
-
         #pygame.display.update()
